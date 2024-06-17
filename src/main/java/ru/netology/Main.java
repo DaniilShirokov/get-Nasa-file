@@ -23,9 +23,9 @@ public class Main {
         HttpGet request = new HttpGet("https://api.nasa.gov/planetary/apod?api_key=73ydee006z64kvDENOqzLtlIwtUtDApexj5DNPjQ");
         try (CloseableHttpResponse response = httpClient.execute(request)) {
             String responseEssence = new String(response.getEntity().getContent().readAllBytes(), StandardCharsets.UTF_8);
-            System.out.println(responseEssence);
+            //System.out.println(responseEssence);
             ObjectResponseNASA objectResponseNASA = createObjectResonseNASA(responseEssence);
-            String testUrl = "https://808.media/wp-content/uploads/2021/07/pole-windows-xp-1-scaled.jpg";
+            //String testUrl = "https://808.media/wp-content/uploads/2021/07/pole-windows-xp-1-scaled.jpg";
             getPicture(objectResponseNASA.getUrl());
         } catch (IOException e) {
             throw new RuntimeException(e);
